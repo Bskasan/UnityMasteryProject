@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class PlayerMovementController : MonoBehaviour
 {
+    [Header("Player Movement")]
+    [SerializeField] private float _moveSpeed = 2f;
+
     private void Update()
     {
         float horizontal = Input.GetAxis("Horizontal");
@@ -9,7 +12,6 @@ public class PlayerMovementController : MonoBehaviour
 
         Vector3 movement = new Vector3 (horizontal, vertical);
 
-        Debug.Log(movement);
-
+        transform.position += movement * Time.deltaTime * _moveSpeed;
     }
 }
