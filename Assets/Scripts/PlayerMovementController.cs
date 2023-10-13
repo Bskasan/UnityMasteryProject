@@ -1,18 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovementController : MonoBehaviour
 {
-    
-    void Start()
+    private void Update()
     {
-        
-    }
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
 
-   
-    void Update()
-    {
-        
+        Vector3 movement = new Vector3 (horizontal, vertical, 0);
+
     }
 }
