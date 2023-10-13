@@ -7,7 +7,9 @@ public class PlayerMovementController : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
 
-        Vector3 movement = new Vector3 (horizontal, vertical, 0);
+        Vector3 movement = new Vector3 (horizontal, vertical);
+
+        Debug.Log(movement);
 
     }
 }
