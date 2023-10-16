@@ -5,7 +5,7 @@ using UnityEngine;
 // We must have Character Grounding
 [RequireComponent(typeof(CharacterGrounding))]
 [RequireComponent(typeof(Rigidbody2D))]
-public class PlayerMovementController : MonoBehaviour
+public class PlayerMovementController : MonoBehaviour, IMove
 {
     [Header("Player Movement")]
     [SerializeField] private float _moveSpeed = 2f;

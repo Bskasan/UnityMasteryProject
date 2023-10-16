@@ -352,8 +352,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 447734667
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -1207454771, guid: 1736dc65a50ffc04d8d66e0876d41bec, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -786,7 +786,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 00000000
+  m_ApplyToSortingLayers: 000000008be3af1a25798f6721a17372
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -911,6 +911,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2339037948649517775, guid: ab7e7a5b40f744f449c6b7218407fe25, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2339037948649517775, guid: ab7e7a5b40f744f449c6b7218407fe25, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1737455909
+      objectReference: {fileID: 0}
     - target: {fileID: 7747450290742496058, guid: ab7e7a5b40f744f449c6b7218407fe25, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.5
@@ -968,6 +976,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2339037948649517775, guid: ab7e7a5b40f744f449c6b7218407fe25, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2339037948649517775, guid: ab7e7a5b40f744f449c6b7218407fe25, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1737455909
+      objectReference: {fileID: 0}
     - target: {fileID: 6152587858242788930, guid: ab7e7a5b40f744f449c6b7218407fe25, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -1025,75 +1041,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab7e7a5b40f744f449c6b7218407fe25, type: 3}
---- !u!1 &1560074534 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3667086439637991648, guid: 48bef978cf3e248469534eab67d6b48b, type: 3}
-  m_PrefabInstance: {fileID: 2629905051787750719}
-  m_PrefabAsset: {fileID: 0}
---- !u!61 &1560074536
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1560074534}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 1
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.00000011920929, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 3, y: 1}
-  m_EdgeRadius: 0
---- !u!251 &1560074537
-PlatformEffector2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1560074534}
-  m_Enabled: 1
-  m_UseColliderMask: 1
-  m_ColliderMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RotationalOffset: 0
-  m_UseOneWay: 1
-  m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
-  m_UseSideFriction: 0
-  m_UseSideBounce: 0
-  m_SideArc: 1
 --- !u!1001 &1576116403
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1239,6 +1186,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2339037948649517775, guid: ab7e7a5b40f744f449c6b7218407fe25, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2339037948649517775, guid: ab7e7a5b40f744f449c6b7218407fe25, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1737455909
+      objectReference: {fileID: 0}
     - target: {fileID: 7747450290742496058, guid: ab7e7a5b40f744f449c6b7218407fe25, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.5
@@ -1332,10 +1287,6 @@ PrefabInstance:
       value: One Way Platform
       objectReference: {fileID: 0}
     - target: {fileID: 5549205332054284755, guid: 48bef978cf3e248469534eab67d6b48b, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.60225
-      objectReference: {fileID: 0}
-    - target: {fileID: 5549205332054284755, guid: 48bef978cf3e248469534eab67d6b48b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.5
       objectReference: {fileID: 0}
@@ -1375,17 +1326,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7748949116979027214, guid: 48bef978cf3e248469534eab67d6b48b, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3667086439637991648, guid: 48bef978cf3e248469534eab67d6b48b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1560074536}
-    - targetCorrespondingSourceObject: {fileID: 3667086439637991648, guid: 48bef978cf3e248469534eab67d6b48b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1560074537}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48bef978cf3e248469534eab67d6b48b, type: 3}
 --- !u!1001 &8974836990929247052
 PrefabInstance:
@@ -1395,6 +1339,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2339037948649517775, guid: ab7e7a5b40f744f449c6b7218407fe25, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2339037948649517775, guid: ab7e7a5b40f744f449c6b7218407fe25, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1737455909
+      objectReference: {fileID: 0}
     - target: {fileID: 7747450290742496058, guid: ab7e7a5b40f744f449c6b7218407fe25, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
