@@ -1,6 +1,10 @@
 using System;
 using UnityEngine;
 
+
+// We must have Character Grounding
+[RequireComponent(typeof(CharacterGrounding))]
+[RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovementController : MonoBehaviour
 {
     [Header("Player Movement")]
@@ -16,7 +20,7 @@ public class PlayerMovementController : MonoBehaviour
         _characterGrounding = GetComponent<CharacterGrounding>();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         float horizontal = Input.GetAxis("Horizontal");
         

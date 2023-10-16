@@ -338,7 +338,6 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  isGrounded: 0
 --- !u!1 &517746356
 GameObject:
   m_ObjectHideFlags: 3
