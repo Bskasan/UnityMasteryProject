@@ -8,10 +8,12 @@ public class PlayerMovementController : MonoBehaviour
     [SerializeField] private float _jumpForce = 400f;
 
     private Rigidbody2D _rigidbody2D;
+    private CharacterGrounding _characterGrounding;
 
     private void Awake()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
+        _characterGrounding = GetComponent<CharacterGrounding>();
     }
 
     private void FixedUpdate()
@@ -22,7 +24,7 @@ public class PlayerMovementController : MonoBehaviour
 
         transform.position += movement * Time.deltaTime * _moveSpeed;
 
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown("space") && _characterGrounding.IsGrounded)
         {
             Jump();
         }

@@ -7,12 +7,13 @@ public class CharacterGrounding : MonoBehaviour
     [SerializeField] private float maxDistance;
     [SerializeField] private LayerMask layerMask;
 
-    [SerializeField] private bool isGrounded;
+    // Setting private, but getting public
+    public bool IsGrounded { get; private set; }
 
     private void Update()
     {
         ChekcFootForGrounding(_leftFoot);
-        if(isGrounded == false)
+        if(IsGrounded == false)
             ChekcFootForGrounding(_rightFoot);
 
     }
@@ -31,8 +32,8 @@ public class CharacterGrounding : MonoBehaviour
         Debug.DrawRay(_leftFoot.position, Vector3.down * maxDistance, Color.red);
 
         if (raycastHit.collider != null)
-            isGrounded = true;
+            IsGrounded = true;
         else
-            isGrounded = false;
+            IsGrounded = false;
     }
 }
