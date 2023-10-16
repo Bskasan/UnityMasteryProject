@@ -5,17 +5,17 @@ using UnityEngine;
 public class CharacterAnimation : MonoBehaviour
 {
     private Animator _animator;
+    private PlayerMovementController _playerMovementController;
 
     private void Awake()
     {
         _animator = GetComponent<Animator>();
+        _playerMovementController = GetComponent<PlayerMovementController>();
     }
 
     // Update is called once per frame
     void Update()
-    {
-        float horizontal = Input.GetAxis("Horizontal");
-        float speed = Mathf.Abs(horizontal);
-        _animator.SetFloat("Speed", speed);
+    {   
+        _animator.SetFloat("Speed", _playerMovementController.Speed);
     }
 }

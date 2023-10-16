@@ -14,6 +14,8 @@ public class PlayerMovementController : MonoBehaviour
     private Rigidbody2D _rigidbody2D;
     private CharacterGrounding _characterGrounding;
 
+    public float Speed { get; private set; }
+
     private void Awake()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
@@ -23,6 +25,7 @@ public class PlayerMovementController : MonoBehaviour
     private void Update()
     {
         float horizontal = Input.GetAxis("Horizontal");
+        Speed = Mathf.Abs(horizontal);
         
         Vector3 movement = new Vector3 (horizontal, 0);
 
