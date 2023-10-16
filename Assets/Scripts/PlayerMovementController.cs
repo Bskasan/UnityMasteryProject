@@ -7,6 +7,13 @@ public class PlayerMovementController : MonoBehaviour
     [SerializeField] private float _moveSpeed = 2f;
     [SerializeField] private float _jumpForce = 400f;
 
+    private Rigidbody2D _rigidbody2D;
+
+    private void Awake()
+    {
+        _rigidbody2D = GetComponent<Rigidbody2D>();
+    }
+
     private void FixedUpdate()
     {
         float horizontal = Input.GetAxis("Horizontal");
@@ -23,7 +30,6 @@ public class PlayerMovementController : MonoBehaviour
 
     private void Jump()
     {
-        var rigidbody2D = GetComponent<Rigidbody2D>();
-        rigidbody2D.AddForce(Vector2.up * _jumpForce);
+        _rigidbody2D.AddForce(Vector2.up * _jumpForce);
     }
 }
