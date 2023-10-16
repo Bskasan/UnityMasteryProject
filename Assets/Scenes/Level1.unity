@@ -334,6 +334,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _leftFoot: {fileID: 1674180727}
   _rightFoot: {fileID: 189061954}
+  maxDistance: 0.4
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1 &517746356
 GameObject:
   m_ObjectHideFlags: 3
