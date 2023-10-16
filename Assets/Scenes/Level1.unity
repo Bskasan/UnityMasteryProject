@@ -164,9 +164,9 @@ GameObject:
   m_Component:
   - component: {fileID: 487340145}
   - component: {fileID: 487340144}
-  - component: {fileID: 487340146}
   - component: {fileID: 487340147}
   - component: {fileID: 487340148}
+  - component: {fileID: 487340146}
   - component: {fileID: 487340149}
   m_Layer: 0
   m_Name: RobotAnimated_0
