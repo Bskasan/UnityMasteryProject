@@ -22,7 +22,7 @@ public class PlayerMovementController : MonoBehaviour
 
         transform.position += movement * Time.deltaTime * _moveSpeed;
 
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetKeyDown("space"))
         {
             Jump();
         }

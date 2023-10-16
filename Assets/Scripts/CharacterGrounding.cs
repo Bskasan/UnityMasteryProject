@@ -7,27 +7,32 @@ public class CharacterGrounding : MonoBehaviour
     [SerializeField] private float maxDistance;
     [SerializeField] private LayerMask layerMask;
 
-    private bool isGrounded;
+    [SerializeField] private bool isGrounded;
 
     private void Update()
     {
+        ChekcFootForGrounding(_leftFoot);
+        if(isGrounded == false)
+            ChekcFootForGrounding(_rightFoot);
+
+    }
+
+    private void ChekcFootForGrounding(Transform foot)
+    {
+        if (foot == null)
+            return;
+
         var raycastHit = Physics2D.Raycast(
-            _leftFoot.position,
-            Vector2.down,
-            maxDistance,
-            layerMask);
+                    foot.position,
+                    Vector2.down,
+                    maxDistance,
+                    layerMask);
 
         Debug.DrawRay(_leftFoot.position, Vector3.down * maxDistance, Color.red);
 
         if (raycastHit.collider != null)
-        {
             isGrounded = true;
-            Debug.Log($"Grounding is => {isGrounded}");
-        }
         else
-        {
             isGrounded = false;
-            Debug.Log($"Grounding is => {isGrounded}");
-        }
     }
 }
