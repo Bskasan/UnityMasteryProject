@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -12,9 +13,14 @@ public class UILivesText : MonoBehaviour
         tmproText = GetComponent<TMP_Text>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        tmproText.SetText($"x {GameManager.Instance.Lives.ToString()}");
+        GameManager.Instance.OnLivesChanged += HandleOnLivesChanged;
+    }
+
+    // Call the event when only live changed.
+    private void HandleOnLivesChanged(int livesRemaining)
+    {
+        tmproText.SetText($"x {livesRemaining.ToString()}");
     }
 }
