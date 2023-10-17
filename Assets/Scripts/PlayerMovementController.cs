@@ -33,12 +33,12 @@ public class PlayerMovementController : MonoBehaviour, IMove
 
         if (Input.GetKeyDown("space") && _characterGrounding.IsGrounded)
         {
-            Jump();
+            Jump(_jumpForce);
         }
     }
 
-    public void Jump()
+    public void Jump(float jumpForce)
     {
-        _rigidbody2D.AddForce(Vector2.up * _jumpForce);
+        _rigidbody2D.AddForce(Vector2.up * jumpForce);
     }
 }
