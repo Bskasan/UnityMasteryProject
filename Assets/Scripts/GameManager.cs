@@ -11,9 +11,10 @@ public class GameManager : MonoBehaviour
     public int Lives { get; private set; }
 
     public event Action<int> OnLivesChanged;
+    public event Action<int> OnCoinsChanged;
 
-    
-    
+    private int _coins;
+   
     private void Awake()
     {
         if (Instance != null)
@@ -42,11 +43,19 @@ public class GameManager : MonoBehaviour
             RestartGame();       
     }
 
+    internal void AddCoin()
+    {
+        _coins++;
+
+        if (OnCoinsChanged != null)
+            OnCoinsChanged(_coins);
+
+        Debug.Log($"Coins : {_coins}");
+    }
+
     private void RestartGame()
     {
         Lives = 3;
         SceneManager.LoadScene(0);
-    }
-
-    
+    }    
 }
