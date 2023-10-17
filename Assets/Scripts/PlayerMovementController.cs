@@ -37,7 +37,7 @@ public class PlayerMovementController : MonoBehaviour, IMove
         }
     }
 
-    private void Jump()
+    public void Jump()
     {
         _rigidbody2D.AddForce(Vector2.up * _jumpForce);
     }

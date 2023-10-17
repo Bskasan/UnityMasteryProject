@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     public int Lives { get; private set; }
 
     public event Action<int> OnLivesChanged;
+
+    
     
     private void Awake()
     {
@@ -23,16 +25,18 @@ public class GameManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
             RestartGame();
-        }
-        
+        }       
     }
 
     internal void KillPlayer()
     {
         Lives--;
 
-        if(OnLivesChanged != null)
+        if (OnLivesChanged != null)
+        {
             OnLivesChanged(Lives);
+            CinemachineShake.Instance.ShakeCamera(3f, 0.5f);
+        } 
 
         if (Lives <= 0)
             RestartGame();       
@@ -43,4 +47,6 @@ public class GameManager : MonoBehaviour
         Lives = 3;
         SceneManager.LoadScene(0);
     }
+
+    
 }
