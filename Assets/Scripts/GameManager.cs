@@ -21,8 +21,8 @@ public class GameManager : MonoBehaviour
         else
         {
             Instance = this;
-            Lives = 3;
             DontDestroyOnLoad(gameObject);
+            RestartGame();
         }
         
     }
@@ -34,6 +34,13 @@ public class GameManager : MonoBehaviour
         if(OnLivesChanged != null)
             OnLivesChanged(Lives);
 
+        if (Lives <= 0)
+            RestartGame();       
+    }
+
+    private void RestartGame()
+    {
+        Lives = 3;
         SceneManager.LoadScene(0);
     }
 }

@@ -16,6 +16,7 @@ public class UILivesText : MonoBehaviour
     private void Start()
     {
         GameManager.Instance.OnLivesChanged += HandleOnLivesChanged;
+        tmproText.text = GameManager.Instance.Lives.ToString();
     }
 
     // Call the event when only live changed.
