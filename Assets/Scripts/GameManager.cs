@@ -56,6 +56,11 @@ public class GameManager : MonoBehaviour
     private void RestartGame()
     {
         Lives = 3;
+        _coins = 0;
+
+        if (OnCoinsChanged != null)
+            OnCoinsChanged(_coins);
+
         SceneManager.LoadScene(0);
     }    
 }

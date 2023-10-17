@@ -13,7 +13,5 @@ public class Coin : MonoBehaviour
 
         GameManager.Instance.AddCoin();
         Destroy(gameObject);
-
-
     }
 }
