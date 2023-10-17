@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
             Lives = 3;
-            //DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(gameObject);
         }
         
     }
