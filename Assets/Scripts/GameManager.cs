@@ -37,10 +37,21 @@ public class GameManager : MonoBehaviour
         {
             OnLivesChanged(Lives);
             CinemachineShake.Instance.ShakeCamera(3f, 0.5f);
-        } 
+        }
 
         if (Lives <= 0)
-            RestartGame();       
+            RestartGame();
+        else
+            SendPlayerToCheckPoint();
+    }
+
+    private void SendPlayerToCheckPoint()
+    {
+        // Execute the code, only when Player die. ( More performance )
+        var checkPointManager = FindObjectOfType<CheckpointManager>();
+        var checkpoint = checkPointManager.GetLastCheckpointThatWasPassed(); 
+        var player = FindObjectOfType<PlayerMovementController>();
+        player.transform.position = checkpoint.transform.position;
     }
 
     internal void AddCoin()
