@@ -24,17 +24,20 @@ public class PlayerMovementController : MonoBehaviour, IMove
 
     private void Update()
     {
+        if (Input.GetKeyDown("space") && _characterGrounding.IsGrounded)
+        {
+            Jump(_jumpForce);
+        }
+    }
+
+    private void FixedUpdate()
+    {
         float horizontal = Input.GetAxis("Horizontal");
         Speed = horizontal;
         
         Vector3 movement = new Vector3 (horizontal, 0);
 
-        transform.position += movement * Time.deltaTime * _moveSpeed;
-
-        if (Input.GetKeyDown("space") && _characterGrounding.IsGrounded)
-        {
-            Jump(_jumpForce);
-        }
+        transform.position += movement * Time.deltaTime * _moveSpeed;       
     }
 
     public void Jump(float jumpForce)
