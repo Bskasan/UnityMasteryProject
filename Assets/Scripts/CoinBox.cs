@@ -24,8 +24,11 @@ public class CoinBox : MonoBehaviour
             GameManager.Instance.AddCoin();
             _remainingCoins--;
 
-            // Debugging
-            Debug.Log($"Remaining Coins: {_remainingCoins}");
+            if (_remainingCoins <= 0)
+            {
+                _enabledSprite.enabled = false;
+                _disableSprite.enabled = true;
+            }
         }
     }
 }
