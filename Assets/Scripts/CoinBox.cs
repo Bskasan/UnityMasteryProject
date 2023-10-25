@@ -18,10 +18,8 @@ public class CoinBox : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         var player = collision.collider.GetComponent<PlayerMovementController>();
-        if (player != null && _remainingCoins > 0) 
+        if (player != null && _remainingCoins > 0 && collision.contacts[0].normal.y > 0.5) 
         {
-            Debug.Log(collision.contacts[0].normal);
-
             // Code for collision with player
             GameManager.Instance.AddCoin();
             _remainingCoins--;
