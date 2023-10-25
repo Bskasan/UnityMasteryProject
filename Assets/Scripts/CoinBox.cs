@@ -20,6 +20,8 @@ public class CoinBox : MonoBehaviour
         var player = collision.collider.GetComponent<PlayerMovementController>();
         if (player != null && _remainingCoins > 0) 
         {
+            Debug.Log(collision.contacts[0].normal);
+
             // Code for collision with player
             GameManager.Instance.AddCoin();
             _remainingCoins--;
