@@ -1874,6 +1874,7 @@ GameObject:
   - component: {fileID: 899563955}
   - component: {fileID: 899563954}
   - component: {fileID: 899563956}
+  - component: {fileID: 899563957}
   m_Layer: 5
   m_Name: CoinImage
   m_TagString: Untagged
@@ -1890,7 +1891,7 @@ RectTransform:
   m_GameObject: {fileID: 899563952}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6863022, y: 0.6863022, z: 0.6863022}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 623112043}
@@ -1959,6 +1960,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &899563957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899563952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4607db302b53ac34c9f2f76f535b5237, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &963560801
 GameObject:
   m_ObjectHideFlags: 0
