@@ -9,10 +9,13 @@ public class CoinBox : MonoBehaviour
     [SerializeField] private int _totalCoins = 3;
 
     private int _remainingCoins;
+    private Animator _animator;
 
     private void Awake()
     {
-        _remainingCoins = _totalCoins;
+        _animator = GetComponent<Animator>();
+
+        _remainingCoins = _totalCoins;        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -22,6 +25,7 @@ public class CoinBox : MonoBehaviour
             // Code for collision with player
             GameManager.Instance.AddCoin();
             _remainingCoins--;
+            _animator.SetTrigger("FlipCoin");
 
             if (_remainingCoins <= 0)
             {
