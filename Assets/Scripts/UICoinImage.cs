@@ -13,6 +13,13 @@ public class UICoinImage : MonoBehaviour
         GameManager.Instance.OnCoinsChanged += Pulse;
     }
 
+    // Event Deregistration
+    // Do not forget to deregistrate!
+    private void OnDestroy()
+    {
+        GameManager.Instance.OnCoinsChanged -= Pulse;  
+    }
+
     private void Pulse(int coins) => _animator.SetTrigger("Pulse");
     
 

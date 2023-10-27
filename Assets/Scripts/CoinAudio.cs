@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class CoinAudio : MonoBehaviour
@@ -12,6 +13,17 @@ public class CoinAudio : MonoBehaviour
     private void Start()
     {
         // Lambda Expressions
-        GameManager.Instance.OnCoinsChanged += (coins) => _audioSource.Play();
+        GameManager.Instance.OnCoinsChanged += PlayCoinAudio;
     }
+
+    private void OnDestroy()
+    {
+        GameManager.Instance.OnCoinsChanged -= PlayCoinAudio;
+    }
+
+    private void PlayCoinAudio(int coins)
+    {
+        _audioSource.Play();
+    }
+
 }
