@@ -1794,6 +1794,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 750157248}
+  - component: {fileID: 750157249}
   m_Layer: 0
   m_Name: Saw
   m_TagString: Untagged
@@ -1819,6 +1820,21 @@ Transform:
   - {fileID: 2095833901}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &750157249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 750157247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c7f13d8fdbc90742b2d3fca7bcdd3c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _start: {fileID: 969370225}
+  _end: {fileID: 2095833901}
+  _sawBladeSprite: {fileID: 1362104682}
 --- !u!1 &753039072
 GameObject:
   m_ObjectHideFlags: 0

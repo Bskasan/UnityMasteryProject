@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class SawBlade : MonoBehaviour
 {
-    [SerializeField] private Transform startPos;
-    [SerializeField] private Transform endPos;
-    [SerializeField] private Transform sawBladeSprite;
+    [SerializeField] private Transform _start;
+    [SerializeField] private Transform _end;
+    [SerializeField] private Transform _sawBladeSprite;
 
-    private void Start()
-    {
-        
-    }
-    
+    private float _positionPercent;
+    private int _direction = 1;
+
     private void Update()
     {
-        
+        _positionPercent += Time.deltaTime * _direction;
+        _sawBladeSprite.position = Vector3.Lerp(_start.position, _end.position, _positionPercent);
     }
 }
