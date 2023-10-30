@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class BreakableBox : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        
+        if(WasHitByPlayer(collision) && WasHitFromBottomSide(collision))
+        {
+            Destroy(gameObject);
+        }
+
     }
 
-    // Update is called once per frame
-    void Update()
+    private static bool WasHitByPlayer(Collision2D collision)
     {
-        
+        return collision.collider.GetComponent<PlayerMovementController>(); ;
+    }
+
+    private static bool WasHitFromBottomSide(Collision2D collision)
+    {
+        return collision.contacts[0].normal.y > 0.5;
     }
 }
