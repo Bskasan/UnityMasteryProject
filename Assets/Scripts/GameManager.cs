@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
         if (OnLivesChanged != null)
         {
             OnLivesChanged(Lives);
-            CinemachineShake.Instance.ShakeCamera(3f, 0.5f);
+            // CinemachineShake.Instance.ShakeCamera(3f, 0.5f);
         }
 
         if (Lives <= 0)
