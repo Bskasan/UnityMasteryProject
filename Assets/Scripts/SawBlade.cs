@@ -18,9 +18,13 @@ public class SawBlade : MonoBehaviour
         _sawBladeSprite.position = Vector3.Lerp(_start.position, _end.position, _positionPercent);
 
         if (_positionPercent >= 1 && _direction == 1)
+        {
             _direction = -1;
+        }
         else if (_positionPercent <= 0 && _direction == -1)
-            _direction = 1; 
+        {
+            _direction = 1;
+        }
 
     }
 }
