@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Mover : MonoBehaviour
 {
     [SerializeField] private Transform _start;
     [SerializeField] private Transform _end;
+    [FormerlySerializedAs("sawBladeSprite")]
     [SerializeField] private Transform _sprite;
     [SerializeField] private float _speed;
 
