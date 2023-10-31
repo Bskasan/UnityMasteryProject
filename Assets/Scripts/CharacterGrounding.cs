@@ -28,7 +28,21 @@ public class CharacterGrounding : MonoBehaviour
 
     private void StickToMovingObjects()
     {
-        
+        if (_groundedObject != null)
+        {
+            if (_groundedObjectLastPosition.HasValue && 
+                _groundedObjectLastPosition.Value != _groundedObject.position)
+            {
+                Vector3 delta = _groundedObject.position - _groundedObjectLastPosition.Value;
+                transform.position += delta;
+            }
+
+            _groundedObjectLastPosition = _groundedObject.position;
+        }
+        else
+        {
+            _groundedObjectLastPosition = null;
+        }
     }
 
     private void ChekcFootForGrounding(Transform foot)
@@ -55,4 +69,4 @@ public class CharacterGrounding : MonoBehaviour
             IsGrounded = false;
         }
     }
-}
+}   
