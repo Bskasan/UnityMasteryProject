@@ -8,7 +8,8 @@ public class Walker : MonoBehaviour
 
     private Collider2D _collider;
     private Rigidbody2D _rigidbody2D;
-    private Vector3 _direction;
+
+    private Vector2 _direction = Vector2.left;
 
     private void Awake()
     {
@@ -18,6 +19,7 @@ public class Walker : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _rigidbody2D.MovePosition(transform.position + _direction * _speed);
+        // Move from current pos to desired pos.
+        _rigidbody2D.MovePosition(_rigidbody2D.position + _direction * _speed * Time.deltaTime);
     }
 }
