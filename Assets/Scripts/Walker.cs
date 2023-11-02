@@ -20,6 +20,6 @@ public class Walker : MonoBehaviour
     private void FixedUpdate()
     {
         // Move from current pos to desired pos.
-        _rigidbody2D.MovePosition(_rigidbody2D.position + _direction * _speed * Time.deltaTime);
+        _rigidbody2D.MovePosition(_rigidbody2D.position + _direction * _speed * Time.fixedDeltaTime);
     }
 }
