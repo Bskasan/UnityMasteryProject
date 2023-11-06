@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,5 +22,21 @@ public class Walker : MonoBehaviour
     {
         // Move from current pos to desired pos.
         _rigidbody2D.MovePosition(_rigidbody2D.position + _direction * _speed * Time.fixedDeltaTime);
+    }
+
+    private void LateUpdate()
+    {
+        if (ReachedEdge())
+            SwitchDirection();
+    }
+   
+    private bool ReachedEdge()
+    {
+        throw new NotImplementedException();
+    }
+
+    private void SwitchDirection()
+    {
+        _direction *= -1;
     }
 }
