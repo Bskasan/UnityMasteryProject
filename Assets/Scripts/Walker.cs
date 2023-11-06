@@ -32,7 +32,20 @@ public class Walker : MonoBehaviour
    
     private bool ReachedEdge()
     {
-        throw new NotImplementedException();
+        float x = _direction.x == 1 ? 
+            _collider.bounds.max.x + 0.1f : 
+            _collider.bounds.min.x - 0.1f;
+
+        float y = _collider.bounds.min.y;
+
+        Vector2 origin = new Vector2(x, y);
+        Debug.DrawRay(origin, Vector2.down * 0.1f, Color.red);
+
+        var hit = Physics2D.Raycast(origin, Vector2.down, 0.1f);
+        if (hit.collider == null)
+            return true;
+
+        return false;
     }
 
     private void SwitchDirection()
