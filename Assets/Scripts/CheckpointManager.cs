@@ -13,6 +13,9 @@ public class CheckpointManager : MonoBehaviour
     public Checkpoint GetLastCheckpointThatWasPassed()
     {
         // Don't use too much, it's going to cause garbage!
-        return checkpoints.Last(t => t.Passed == true);
+        if(checkpoints.Length > 0)
+            return checkpoints.Last(t => t.Passed == true);
+
+        return null;
     }
 }

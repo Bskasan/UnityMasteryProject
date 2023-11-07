@@ -36,7 +36,7 @@ public class ShellFlipped : MonoBehaviour
                 // Destroy Breakable Objects
                 var breakable = collision.collider.GetComponent<BreakableBox>();
                 if (breakable != null)
-                    Destroy(breakable.gameObject);
+                    breakable.HandleShellHit(this);
             }
         }
     }

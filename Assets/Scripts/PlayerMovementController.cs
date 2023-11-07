@@ -40,13 +40,15 @@ public class PlayerMovementController : MonoBehaviour, IMove
         transform.position += movement * Time.deltaTime * _moveSpeed;       
     }
 
+    internal void Bounce()
+    {
+        Jump(200f);
+    }
+
     public void Jump(float jumpForce)
     {
         _rigidbody2D.AddForce(Vector2.up * jumpForce);
     }
 
-    internal void Bounce()
-    {
-        _rigidbody2D.AddForce(Vector2.up * _jumpForce);
-    }
+    
 }
