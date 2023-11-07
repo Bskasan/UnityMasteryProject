@@ -44,4 +44,9 @@ public class PlayerMovementController : MonoBehaviour, IMove
     {
         _rigidbody2D.AddForce(Vector2.up * jumpForce);
     }
+
+    internal void Bounce()
+    {
+        _rigidbody2D.AddForce(Vector2.up * _jumpForce);
+    }
 }
