@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,7 +27,25 @@ public class ShellFlipped : MonoBehaviour
             {
                 LaunchShell(collision);
             }
+            else
+            {
+                if (collision.WasTop())
+                {
+                    _direction = Vector2.zero;
+                }
+                else
+                {
+                    GameManager.Instance.KillPlayer();
+                }
+            }
         }
     }
 
+    private void LaunchShell(Collision2D collision)
+    {
+        // Checking if it's right or left.
+        var floatDirection = collision.contacts[0].normal.x > 0 ? 1f : -1f;
+
+        _direction = new Vector2(floatDirection, 0);
+    }
 }
