@@ -809,7 +809,6 @@ GameObject:
   - component: {fileID: 409775351}
   - component: {fileID: 409775354}
   - component: {fileID: 409775356}
-  - component: {fileID: 409775357}
   m_Layer: 0
   m_Name: Snail
   m_TagString: Untagged
@@ -991,18 +990,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 1
   _spawnOnStompPrefab: {fileID: 4500344536552906309, guid: 67bff6217ebe02a40964d1d8101d4543, type: 3}
---- !u!114 &409775357
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 409775350}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a1fc25186064af4b96a70d8212abdb3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &420942855
 GameObject:
   m_ObjectHideFlags: 0
@@ -1228,7 +1215,7 @@ GameObject:
   - component: {fileID: 487340151}
   - component: {fileID: 487340150}
   m_Layer: 0
-  m_Name: RobotAnimated_0
+  m_Name: Player_Robot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

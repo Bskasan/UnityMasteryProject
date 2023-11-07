@@ -34,8 +34,13 @@ public class Walker : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.WasHitByPlayer() && collision.WasTop())
-            HandleWalkerStomped();
+        if (collision.WasHitByPlayer())
+        {
+            if (collision.WasTop())
+                HandleWalkerStomped();
+            else
+                GameManager.Instance.KillPlayer();
+        }
     }
 
     private void HandleWalkerStomped()
