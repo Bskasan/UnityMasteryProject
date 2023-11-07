@@ -52,7 +52,8 @@ public class Walker : MonoBehaviour
 
         playerMovementController.Bounce();
 
-        Destroy(gameObject);
+        if(gameObject != null)
+            Destroy(gameObject);
     }
 
     private bool HitNotPlayer()
