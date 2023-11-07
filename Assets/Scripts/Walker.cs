@@ -43,10 +43,12 @@ public class Walker : MonoBehaviour
         }
     }
 
-    private void HandleWalkerStomped()
+    private IEnumerator HandleWalkerStomped()
     {
         if(_spawnOnStompPrefab != null)
             Instantiate(_spawnOnStompPrefab, transform.position, transform.rotation);
+
+        yield return new WaitForEndOfFrame();
 
         Destroy(gameObject);
     }
@@ -93,9 +95,7 @@ public class Walker : MonoBehaviour
         return _direction.x == 1 ?
             _collider.bounds.max.x + 0.1f :
             _collider.bounds.min.x - 0.1f;
-    }
-
-    
+    }  
 
     private void SwitchDirection()
     {
