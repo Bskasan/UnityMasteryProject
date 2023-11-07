@@ -43,12 +43,10 @@ public class Walker : MonoBehaviour
         }
     }
 
-    private IEnumerator HandleWalkerStomped()
+    private void HandleWalkerStomped()
     {
         if(_spawnOnStompPrefab != null)
             Instantiate(_spawnOnStompPrefab, transform.position, transform.rotation);
-
-        yield return new WaitForEndOfFrame();
 
         Destroy(gameObject);
     }
