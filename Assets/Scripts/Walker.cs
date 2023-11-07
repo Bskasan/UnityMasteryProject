@@ -6,6 +6,7 @@ using UnityEngine;
 public class Walker : MonoBehaviour
 {
     [SerializeField] private float _speed = 1f;
+    [SerializeField] private GameObject _spawnOnStompPrefab;
 
     private Collider2D _collider;
     private Rigidbody2D _rigidbody2D;
@@ -29,6 +30,17 @@ public class Walker : MonoBehaviour
     {
         if (ReachedEdge() || HitNotPlayer())
             SwitchDirection(); 
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.WasHitByPlayer() && collision.WasTop())
+            HandleWalkerStomped();
+    }
+
+    private void HandleWalkerStomped()
+    {
+        Destroy(gameObject);
     }
 
     private bool HitNotPlayer()

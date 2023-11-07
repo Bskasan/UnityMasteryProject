@@ -20,7 +20,7 @@ public class CoinBox : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.WasHitByPlayer() && _remainingCoins > 0 && collision.WasHitFromBottomSide())
+        if (collision.WasHitByPlayer() && _remainingCoins > 0 && collision.WasBottom())
         {
             // Code for collision with player
             GameManager.Instance.AddCoin();
