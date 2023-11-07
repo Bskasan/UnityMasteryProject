@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CoinBox : MonoBehaviour
+public class CoinBox : MonoBehaviour, ITakeShellHits
 {
     [SerializeField] private SpriteRenderer _enabledSprite;
     [SerializeField] private SpriteRenderer _disableSprite;
@@ -10,6 +10,12 @@ public class CoinBox : MonoBehaviour
 
     private int _remainingCoins;
     private Animator _animator;
+
+    public void HandleShellHit(ShellFlipped shellFlipped)
+    {
+        if(_remainingCoins > 0)
+            TakeCoin();
+    }
 
     private void Awake()
     {
@@ -22,18 +28,21 @@ public class CoinBox : MonoBehaviour
     {
         if (collision.WasHitByPlayer() && _remainingCoins > 0 && collision.WasBottom())
         {
-            // Code for collision with player
-            GameManager.Instance.AddCoin();
-            _remainingCoins--;
-            _animator.SetTrigger("FlipCoin");
-
-            if (_remainingCoins <= 0)
-            {
-                _enabledSprite.enabled = false;
-                _disableSprite.enabled = true;
-            }
+            TakeCoin();
         }
     }
 
+    private void TakeCoin()
+    {
+        // Code for collision with player
+        GameManager.Instance.AddCoin();
+        _remainingCoins--;
+        _animator.SetTrigger("FlipCoin");
 
+        if (_remainingCoins <= 0)
+        {
+            _enabledSprite.enabled = false;
+            _disableSprite.enabled = true;
+        }
+    }
 }

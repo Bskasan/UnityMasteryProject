@@ -14,9 +14,12 @@ public class GameManager : MonoBehaviour
     public event Action<int> OnCoinsChanged;
 
     private int _coins;
+    
    
     private void Awake()
     {
+        
+
         if (Instance != null)
         { 
             Destroy(gameObject); 
@@ -52,6 +55,8 @@ public class GameManager : MonoBehaviour
         var checkpoint = checkPointManager.GetLastCheckpointThatWasPassed(); 
         var player = FindObjectOfType<PlayerMovementController>();
         player.transform.position = checkpoint.transform.position;
+
+       
     }
 
     internal void AddCoin()
