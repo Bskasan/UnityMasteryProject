@@ -60,6 +60,11 @@ public class CharacterGrounding : MonoBehaviour
 
         if (raycastHit.collider != null)
         {
+            if (_groundedObject != raycastHit.collider.transform)
+            {               
+                _groundedObjectLastPosition = raycastHit.collider.transform.position;
+            }
+
             _groundedObject = raycastHit.collider.transform;
             IsGrounded = true;
         }
