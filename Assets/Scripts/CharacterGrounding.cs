@@ -3,8 +3,7 @@ using UnityEngine;
 
 public class CharacterGrounding : MonoBehaviour
 {
-    [SerializeField] private Transform _leftFoot;
-    [SerializeField] private Transform _rightFoot;
+    [SerializeField] private Transform[] _positions;
     [SerializeField] private float maxDistance;
     [SerializeField] private LayerMask layerMask;
 
@@ -18,9 +17,12 @@ public class CharacterGrounding : MonoBehaviour
 
     private void Update()
     {
-        ChekcFootForGrounding(_leftFoot);
-        if(IsGrounded == false)
-            ChekcFootForGrounding(_rightFoot);
+        foreach (var position in _positions)
+        { 
+            CheckFootForGrounding(position);
+            if (IsGrounded)
+                break;
+        }
 
         StickToMovingObjects();
 
@@ -45,7 +47,7 @@ public class CharacterGrounding : MonoBehaviour
         }
     }
 
-    private void ChekcFootForGrounding(Transform foot)
+    private void CheckFootForGrounding(Transform foot)
     {
         if (foot == null)
             return;
@@ -56,7 +58,7 @@ public class CharacterGrounding : MonoBehaviour
                     maxDistance,
                     layerMask);
 
-        Debug.DrawRay(_leftFoot.position, Vector3.down * maxDistance, Color.red);
+        Debug.DrawRay(_positions[1].position, Vector3.down * maxDistance, Color.red);
 
         if (raycastHit.collider != null)
         {
