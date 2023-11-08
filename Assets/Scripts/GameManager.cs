@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public event Action<int> OnCoinsChanged;
 
     private int _coins;
+    private int currentLevelIndex;
     
    
     private void Awake()
@@ -67,6 +68,12 @@ public class GameManager : MonoBehaviour
             OnCoinsChanged(_coins);
 
         Debug.Log($"Coins : {_coins}");
+    }
+
+    private void MoveToNextLevel()
+    {
+        currentLevelIndex++;
+        SceneManager.LoadScene(currentLevelIndex);
     }
 
     private void RestartGame()
