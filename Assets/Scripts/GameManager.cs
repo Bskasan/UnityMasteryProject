@@ -70,7 +70,7 @@ public class GameManager : MonoBehaviour
         Debug.Log($"Coins : {_coins}");
     }
 
-    private void MoveToNextLevel()
+    public void MoveToNextLevel()
     {
         currentLevelIndex++;
         SceneManager.LoadScene(currentLevelIndex);
