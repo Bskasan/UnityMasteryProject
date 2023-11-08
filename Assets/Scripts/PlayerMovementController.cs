@@ -10,9 +10,11 @@ public class PlayerMovementController : MonoBehaviour, IMove
     [Header("Player Movement")]
     [SerializeField] private float _moveSpeed = 2f;
     [SerializeField] private float _jumpForce = 400f;
+    [SerializeField] private float _wallJumpForce = 300f;
 
     private Rigidbody2D _rigidbody2D;
     private CharacterGrounding _characterGrounding;
+    
 
     public float Speed { get; private set; }
 
@@ -27,6 +29,13 @@ public class PlayerMovementController : MonoBehaviour, IMove
         if (Input.GetKeyDown("space") && _characterGrounding.IsGrounded)
         {
             Jump(_jumpForce);
+
+            // Checkin the Grounding Direction 
+            if (_characterGrounding.GroundedDirection != Vector2.down)
+            {
+                // Jumping to the opposite direction
+                _rigidbody2D.AddForce(_characterGrounding.GroundedDirection * -1f * _wallJumpForce);
+            }
         }
     }
 
@@ -47,7 +56,7 @@ public class PlayerMovementController : MonoBehaviour, IMove
 
     public void Jump(float jumpForce)
     {
-        _rigidbody2D.AddForce(Vector2.up * jumpForce);
+        _rigidbody2D.AddForce(Vector2.up * jumpForce);      
     }
 
     

@@ -11,9 +11,8 @@ public class CharacterGrounding : MonoBehaviour
     private Transform _groundedObject;
     private Vector3? _groundedObjectLastPosition;
 
-    // Setting private, but getting public
     public bool IsGrounded { get; private set; }
-    
+    public Vector2 GroundedDirection { get; private set; }
 
     private void Update()
     {
@@ -69,6 +68,7 @@ public class CharacterGrounding : MonoBehaviour
 
             _groundedObject = raycastHit.collider.transform;
             IsGrounded = true;
+            GroundedDirection = positionObject.forward;
         }
         else
         {
