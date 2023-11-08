@@ -47,18 +47,18 @@ public class CharacterGrounding : MonoBehaviour
         }
     }
 
-    private void CheckFootForGrounding(Transform foot)
+    private void CheckFootForGrounding(Transform positionObject)
     {
-        if (foot == null)
+        if (positionObject == null)
             return;
 
         var raycastHit = Physics2D.Raycast(
-                    foot.position,
-                    Vector2.down,
+                    positionObject.position,
+                    positionObject.forward,
                     maxDistance,
                     layerMask);
 
-        Debug.DrawRay(_positions[1].position, Vector3.down * maxDistance, Color.red);
+        Debug.DrawRay(positionObject.position, positionObject.forward * maxDistance, Color.red);
 
         if (raycastHit.collider != null)
         {
